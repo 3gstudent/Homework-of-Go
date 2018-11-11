@@ -13,7 +13,6 @@ import (
 
 var session *yamux.Session
 
-
 func CreateForwardSocks(address string) error {
 	server, err := socks5.New(&socks5.Config{})
 	if err != nil {
@@ -32,20 +31,17 @@ func connectForSocks(address string) error {
 	if err != nil {
 		return err
 	}
-
 	var conn net.Conn
 	log.Println("Connecting to far end")
 	conn, err = net.Dial("tcp", address)
 	if err != nil {
 		return err
 	}
-
 	log.Println("Starting server")
 	session, err = yamux.Server(conn, nil)
 	if err != nil {
 		return err
 	}
-
 	for {
 		stream, err := session.Accept()
 		log.Println("Acceping stream")
@@ -61,7 +57,6 @@ func connectForSocks(address string) error {
 		}()
 	}
 }
-
 
 // Catches yamux connecting to us
 func listenForSocks(address string) {
@@ -106,9 +101,7 @@ func listenForClients(address string) error {
 		if err != nil {
 			return err
 		}
-
 		// connect both of conn and stream
-
 		go func() {
 			log.Println("Starting to copy conn to stream")
 			io.Copy(conn, stream)
@@ -122,7 +115,6 @@ func listenForClients(address string) error {
 		}()
 	}
 }
-
 
 func main() {
 
