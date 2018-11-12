@@ -3,7 +3,7 @@ Go code examples of my blog.
 
 ### windows_build.bat
 
-Use to build all versions of operating system and compilation architecture.
+Use to build Go executables for multiple platforms
 
 ### frsocks.go
 
