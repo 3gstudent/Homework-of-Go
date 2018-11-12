@@ -13,7 +13,7 @@ import (
 
 var session *yamux.Session
 
-func CreateForwardSocks(address string) error {
+func createForwardSocks(address string) error {
 	server, err := socks5.New(&socks5.Config{})
 	if err != nil {
 		return err
@@ -147,7 +147,7 @@ func main() {
 	if *sockstype == "fsocks" {
 		log.Println("[Forward Socks5 Mode]")
 		if *listen != "" {
-		log.Fatal(CreateForwardSocks(*listen))
+		log.Fatal(createForwardSocks(*listen))
 		}
 	}else if *sockstype == "rsocks" {
 		log.Println("[Reverse Socks5 Mode]")
