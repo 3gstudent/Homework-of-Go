@@ -1,6 +1,10 @@
 # Homework-of-Go
 Go code examples of my blog.
 
+### windows_build.bat
+
+Use to build all versions of operating system and compilation architecture.
+
 ### frsocks.go
 
 reference:https://github.com/brimstone/rsocks
