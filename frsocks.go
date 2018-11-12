@@ -22,8 +22,7 @@ func CreateForwardSocks(address string) error {
     if err := server.ListenAndServe("tcp", "0.0.0.0:"+address); err != nil {
           return err
     }
-    err = nil
-    return err
+    return nil
 }
 
 func connectForSocks(address string) error {
