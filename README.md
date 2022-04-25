@@ -17,4 +17,6 @@ Support forward and reverse socks5 proxy.
 
 Use to query the data of PostgreSQL database on vCenter.
 
+### WorkspaceONE_Query_PostgreSQL.go 
 
+Use to query the data of PostgreSQL database on Workspace ONE.
